@@ -1,5 +1,6 @@
 using System;
 
+
 public class Project
 {
     public string project{get;set;}
@@ -56,6 +57,34 @@ public class EmployeeData
         }
     }
 }
+public class EmployeeRole
+{
+    public string employeerole{get;set;}
+
+    public EmployeeRole(string EmployeeRoleName)
+    {
+        employeerole=EmployeeRoleName;
+    }
+}
+
+public class EmployeeRolebase
+{
+    List<EmployeeRole> EmployeeRoleprolifics= new List<EmployeeRole>();
+    
+    public void addemployeerole(EmployeeRole employeerole)
+    {
+        EmployeeRoleprolifics.Add(employeerole);
+    
+    }
+
+    public void viewEmployeeRole()
+    {
+        foreach(var a in EmployeeRoleprolifics)
+        {
+           Console.WriteLine(a.employeerole);
+        }
+    }
+}
 public class ProlificsProjectManagement
 {
     public static void Main(string[] args)
@@ -65,20 +94,20 @@ public class ProlificsProjectManagement
         Console.WriteLine("SELECT OPERATIONS");
         Console.WriteLine("");
         Console.Write("Enter 1 for add  project               ");
-        Console.WriteLine("Enter 2 for view all projects");
+        Console.WriteLine("         Enter 2 for view all projects");
         Console.WriteLine("");
         Console.Write("Enter 3 for add Employee              ");
-        Console.WriteLine("Enter 4 for view all Employees");
+        Console.WriteLine("         Enter 4 for view all Employees");
         Console.WriteLine("");
-        Console.Write("Enter 5 for add  Role                  ");
-        Console.WriteLine("Enter 6 for view all Roles");
+        Console.Write("Enter 5 for add  EmployeeRole                  ");
+        Console.WriteLine("Enter 6 for view all EmployeeRoles");
         Console.WriteLine("");
         Console.WriteLine("Enter x  for exit");
         ProjectManagement obj = new ProjectManagement();
         EmployeeData obj1 = new EmployeeData();
+        EmployeeRolebase obj2 = new EmployeeRolebase();
 
         var userInput = Console.ReadLine();
-
 
         while (true)
         {
@@ -101,14 +130,24 @@ public class ProlificsProjectManagement
                     obj1.addemployee(employeeadd);
                     Console.WriteLine("Employee added successfully");
                     break;
-                case "4":
+                case"4":
                     obj1.viewEmployee();
+                    break;
+                case "5":
+                    Console.WriteLine("Employee Role");
+                    var EmployeeRole = Console.ReadLine();
+                    var employeeroleadd = new EmployeeRole(EmployeeRole);
+                    obj2.addemployeerole(employeeroleadd);
+                    Console.WriteLine("EmployeeRole added successfully");
+                    break;
+                case "6":
+                    obj2.viewEmployeeRole();
                     break;
                 case "x":
                      return;
                 default:
                     Console.WriteLine("SELECT VAILD OPERATION");
-                      break;
+                    break;
             }
             Console.WriteLine("Select operation");
             userInput = Console.ReadLine();
@@ -116,9 +155,4 @@ public class ProlificsProjectManagement
         }
 
     }
-}   
-
-    
-
-
-
+}  
