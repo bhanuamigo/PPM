@@ -1,5 +1,61 @@
 using System;
 
+public class Project
+{
+    public string project{get;set;}
+
+    public Project(string ProjectName)
+    {
+        project=ProjectName;
+    }
+}
+
+public class ProjectManagement
+{
+    List<Project> prolifics= new List<Project>();
+    
+    public void addproject(Project project)
+    {
+        prolifics.Add(project);
+    
+    }
+
+    public void viewProject()
+    {
+        foreach(var a in prolifics)
+        {
+           Console.WriteLine(a.project);
+        }
+    }
+}
+public class Employee
+{
+    public string employee{get;set;}
+
+    public Employee(string EmployeeName)
+    {
+        employee=EmployeeName;
+    }
+}
+
+public class EmployeeData
+{
+    List<Employee> Employeeprolifics= new List<Employee>();
+    
+    public void addemployee(Employee employee)
+    {
+        Employeeprolifics.Add(employee);
+    
+    }
+
+    public void viewEmployee()
+    {
+        foreach(var a in Employeeprolifics)
+        {
+           Console.WriteLine(a.employee);
+        }
+    }
+}
 public class ProlificsProjectManagement
 {
     public static void Main(string[] args)
@@ -61,63 +117,6 @@ public class ProlificsProjectManagement
 
     }
 }   
-public class Project
-{
-    public string project{get;set;}
-
-    public Project(string ProjectName)
-    {
-        project=ProjectName;
-    }
-}
-
-public class ProjectManagement
-{
-    List<Project> prolifics= new List<Project>();
-    
-    public void addproject(Project project)
-    {
-        prolifics.Add(project);
-    
-    }
-
-    public void viewProject()
-    {
-        foreach(var a in prolifics)
-        {
-           Console.WriteLine(a.project);
-        }
-    }
-}
-public class Employee
-{
-    public string employee{get;set;}
-
-    public Employee(string EmployeeName)
-    {
-        employee=EmployeeName;
-    }
-}
-
-public class EmployeeData
-{
-    List<Employee> Employeeprolifics= new List<Employee>();
-    
-    public void addemployee(Employee employee)
-    {
-        Employeeprolifics.Add(employee);
-    
-    }
-
-    public void viewEmployee()
-    {
-        foreach(var a in Employeeprolifics)
-        {
-           Console.WriteLine(a.employee);
-        }
-    }
-}
-
 
     
 
